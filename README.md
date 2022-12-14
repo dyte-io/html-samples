@@ -39,5 +39,5 @@ npx serve samples/default-meeting-ui
 3. Load the server in your browser and make sure you pass the `authToken` query in the URL.
 
 ```
-http://localhost:5173/?authToken=<your-token>
+http://localhost:3000/?authToken=<your-token>
 ```
