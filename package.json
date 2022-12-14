@@ -1,0 +1,15 @@
+{
+  "name": "html-samples",
+  "scripts": {
+    "format": "prettier -w samples"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "prettier": "^2.8.1"
+  },
+  "dependencies": {
+    "serve": "^14.1.2"
+  }
+}
