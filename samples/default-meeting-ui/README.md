@@ -1,6 +1,7 @@
 # Default Meeting UI Sample
 
-This sample showcases the simplest way to integrate Dyte's React UI Kit in your app!
+This sample showcases the simplest way to integrate Dyte's React UI Kit in your
+app!
 
 ---
 

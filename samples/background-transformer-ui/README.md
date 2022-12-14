@@ -1,4 +1,4 @@
-# Simple Background Transformer sample
+# Background Transformer UI sample
 
 This sample showcases how you can modify your background while in a Dyte video
 call with the

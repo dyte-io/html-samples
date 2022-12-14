@@ -10,6 +10,7 @@ Here are the list of available samples at the moment.
 
 1. [Default Meeting UI](./samples/default-meeting-ui/)
 2. [Using Background Transformer to modify your background](./samples/with-background-transformer/)
+3. [Background Transformer UI sample](./samples/background-transformer-ui/)
 
 ## Usage
 

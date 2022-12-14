@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Meeting UI | Dyte UI Kit</title>
+    <title>Simple Background Transformer sample | Dyte UI Kit</title>
 
-    <head>
-      <!-- Import helper to load UI Kit components -->
-      <script type="module">
-        import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@1.40.0/loader/index.es2017.js';
-        defineCustomElements();
-      </script>
+    <!-- 
+      For the UI Kit and Web Core script tags, 
+      make sure to use the latest versions in the URL when you're using this
+    -->
 
-      <!-- Import Web Core via CDN too -->
-      <script src="https://cdn.dyte.in/core/dyte-0.45.2.js"></script>
+    <!-- Import helper to load UI Kit components -->
+    <script type="module">
+      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@1.40.0/loader/index.es2017.js';
+      defineCustomElements();
+    </script>
 
-      <!-- Video Background Transformer -->
-      <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer/dist/index.iife.js"></script>
-    </head>
+    <!-- Import Web Core via CDN too -->
+    <script src="https://cdn.dyte.in/core/dyte-0.45.2.js"></script>
+
+    <!-- Video Background Transformer -->
+    <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer/dist/index.iife.js"></script>
   </head>
   <body>
     <dyte-meeting id="my-meeting" />

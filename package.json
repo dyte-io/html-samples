@@ -4,7 +4,8 @@
     "format": "prettier -w samples"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "proseWrap": "always"
   },
   "devDependencies": {
     "prettier": "^2.8.1"
