@@ -17,11 +17,11 @@
       defineCustomElements();
     </script>
 
-    <!-- Import Web Core via CDN too -->
-    <script src="https://cdn.dyte.in/core/dyte.js"></script>
+    <!-- Import Web Core 2.x via CDN -->
+    <script src="https://cdn.dyte.in/core/dyte2.js"></script>
 
     <!-- Video Background Transformer -->
-    <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer/dist/index.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer@latest/dist/index.iife.js"></script>
   </head>
   <body>
     <dyte-meeting id="my-meeting" show-setup-screen="true" />
@@ -44,22 +44,30 @@
       }).then(async (meeting) => {
         document.getElementById('my-meeting').meeting = meeting;
 
+        /**
+         * To customise DyteVideoBackgroundTransformer configs, please refer to https://www.npmjs.com/package/@dytesdk/video-background-transformer?activeTab=readme.
+        */
         const videoBackgroundTransformer =
-          await DyteVideoBackgroundTransformer.init();
+          await DyteVideoBackgroundTransformer.init({
+            meeting,
+            segmentationConfig: {
+              pipeline: 'canvas2dCpu', // 'webgl2' | 'canvas2dCpu'
+            }
+          });
 
         // The video-background-transformer provides two functionalities
         // 1. Add background blur
         // 2. Add a background image
 
         // 1. To add background blur, with strength of 10
-        // meeting.self.addVideoMiddleware(
-        //   await videoBackgroundTransformer.createBackgroundBlurVideoMiddleware(
-        //     10
-        //   )
-        // );
+        //  await meeting.self.addVideoMiddleware(
+        //     await videoBackgroundTransformer.createBackgroundBlurVideoMiddleware(
+        //       10
+        //     )
+        //   );
 
         // 2. To add a background image
-        meeting.self.addVideoMiddleware(
+        await meeting.self.addVideoMiddleware(
           await videoBackgroundTransformer.createStaticBackgroundVideoMiddleware(
             'https://assets.dyte.io/backgrounds/bg-dyte-office.jpg'
           )

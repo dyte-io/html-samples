@@ -5,22 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Default Meeting UI | Dyte UI Kit</title>
+    <!--
+      For the UI Kit and Web Core script tags,
+      make sure to use the latest versions in the URL when you're using this
+    -->
 
-    <head>
-      <!--
-        For the UI Kit and Web Core script tags,
-        make sure to use the latest versions in the URL when you're using this
-      -->
+    <!-- Import helper to load UI Kit components -->
+    <script type="module">
+      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@latest/loader/index.es2017.js';
+      defineCustomElements();
+    </script>
 
-      <!-- Import helper to load UI Kit components -->
-      <script type="module">
-        import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@latest/loader/index.es2017.js';
-        defineCustomElements();
-      </script>
-
-      <!-- Import Web Core via CDN too -->
-      <script src="https://cdn.dyte.in/core/dyte.js"></script>
-    </head>
+    <!-- Import Web Core 2.x via CDN -->
+    <script src="https://cdn.dyte.in/core/dyte2.js"></script>
   </head>
   <body>
     <dyte-meeting id="my-meeting" show-setup-screen="true" />
