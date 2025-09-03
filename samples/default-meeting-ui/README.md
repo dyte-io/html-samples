@@ -5,6 +5,6 @@ app!
 
 ---
 
-![A screenshot of the dyte-meeting component](./screenshot.png)
+![A screenshot of the rtk-meeting component](./screenshot.png)
 
 [See source](./index.html)
