@@ -10,7 +10,7 @@ This sample demonstrates how to create a custom meeting UI using Cloudflare Real
 - **Custom Sidebar**: Standard tabs (chat, participants, polls, plugins) plus custom "warnings" tab
 - **Custom Meeting Header**: Logo, indicators, meeting title, and controls
 - **Responsive Design**: Built with Tailwind CSS for modern UI
-- **State Management**: Uses Valtio for reactive state management
+- **State Management**: Uses simple reactive state implementation
 - **No Build Steps**: Pure HTML/CSS/JS implementation
 
 ## Getting Started
@@ -48,7 +48,7 @@ This sample demonstrates how to create a custom meeting UI using Cloudflare Real
 ```
 create-your-own-ui/
 ├── index.html                 # Main HTML file
-├── store.js                   # Valtio state management
+├── store.js                   # Simple reactive state management
 ├── utils.js                   # Utility functions
 ├── types.js                   # Type definitions
 ├── components/                # Component files
@@ -113,7 +113,7 @@ create-your-own-ui/
 
 - **Cloudflare RealtimeKit**: Core meeting functionality
 - **Cloudflare RealtimeKit UI**: Pre-built UI components
-- **Valtio**: Reactive state management
+- **Simple Reactive State**: Custom reactive state implementation
 - **Tailwind CSS**: Utility-first CSS framework
 
 All dependencies are loaded via CDN, no build process required.
@@ -132,12 +132,18 @@ This sample works in modern browsers that support:
 
 1. **Auth Token Error**: Ensure you're passing a valid `authToken` in the URL
 2. **Components Not Loading**: Check browser console for script loading errors
-3. **State Not Updating**: Verify Valtio subscriptions are properly set up
+3. **State Not Updating**: Verify reactive state subscriptions are properly set up
 4. **Media Devices**: Ensure browser permissions for camera/microphone access
 
 ### Debug Mode
 
 The meeting object is exposed on `window.meeting` for debugging purposes. Open browser dev tools and inspect the meeting object to troubleshoot issues.
+
+### State Subscription Issues
+
+If components aren't updating when states change, ensure you're subscribing to the store object, not the nested states:
+- ✅ `window.StatesStore.subscribe(statesStore, callback)`
+- ❌ `window.StatesStore.subscribe(statesStore.states, callback)`
 
 ## License
 
