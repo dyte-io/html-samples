@@ -5,24 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Background Transformer UI sample | Dyte UI Kit</title>
-
-    <!--
-      For the UI Kit and Web Core script tags,
-      make sure to use the latest versions in the URL when you're using this
-    -->
+    <title>Background Transformer UI sample | RealtimeKit</title>
 
     <!-- Import helper to load UI Kit components -->
     <script type="module">
-      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@latest/loader/index.es2017.js';
+      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit-ui@latest/loader/index.es2017.js';
       defineCustomElements();
     </script>
 
-    <!-- Import Web Core 2.x via CDN -->
-    <script src="https://cdn.dyte.in/core/dyte2.js"></script>
+    <!-- Import RealtimeKit Core via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit@latest/dist/browser.js"></script>
 
     <!-- Video Background Transformer -->
-    <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer@latest/dist/index.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit-virtual-background@latest/dist/index.iife.js"></script>
 
     <style>
       * {
@@ -158,7 +153,7 @@
         object-fit: cover;
       }
 
-      dyte-meeting {
+      rtk-meeting {
         flex-grow: 1;
         height: auto;
       }
@@ -195,11 +190,11 @@
         </button>
       </header>
       <div id="main">
-        <dyte-meeting
+        <rtk-meeting
           id="my-meeting"
           mode="fill"
           show-setup-screen="true"
-        ></dyte-meeting>
+        ></rtk-meeting>
         <div id="sidebar">
           <div id="container">
             <h3>Backgrounds</h3>
@@ -292,17 +287,17 @@
           );
         }
 
-        const meeting = await DyteClient.init({
+        const meeting = await RealtimeKitClient.init({
           authToken,
         });
 
         document.getElementById('my-meeting').meeting = meeting;
 
         /**
-         * To customise DyteVideoBackgroundTransformer configs, please refer to https://www.npmjs.com/package/@dytesdk/video-background-transformer?activeTab=readme.
+         * To customise RealtimeKitVideoBackgroundTransformer configs, please refer to https://www.npmjs.com/package/@cloudflare/realtimekit-virtual-background?activeTab=readme.
         */
-        const dyteVideoBackgroundTransformer =
-          await DyteVideoBackgroundTransformer.init({
+        const realtimeKitVideoBackgroundTransformer =
+          await RealtimeKitVideoBackgroundTransformer.init({
             meeting,
             segmentationConfig: {
               pipeline: 'canvas2dCpu', // 'webgl2' | 'canvas2dCpu'
@@ -320,14 +315,14 @@
           if (type === 'image') {
             // set the selected image as background
             activeMiddleware =
-              await dyteVideoBackgroundTransformer.createStaticBackgroundVideoMiddleware(
+              await realtimeKitVideoBackgroundTransformer.createStaticBackgroundVideoMiddleware(
                 url
               );
             await meeting.self.addVideoMiddleware(activeMiddleware);
           } else if (type === 'blur') {
             // set background blur
             activeMiddleware =
-              await dyteVideoBackgroundTransformer.createBackgroundBlurVideoMiddleware(
+              await realtimeKitVideoBackgroundTransformer.createBackgroundBlurVideoMiddleware(
                 4
               );
             await meeting.self.addVideoMiddleware(activeMiddleware);

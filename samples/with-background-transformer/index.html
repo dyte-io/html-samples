@@ -4,27 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Background Transformer sample | Dyte UI Kit</title>
-
-    <!-- 
-      For the UI Kit and Web Core script tags, 
-      make sure to use the latest versions in the URL when you're using this
-    -->
+    <title>Simple Background Transformer sample | RealtimeKit</title>
 
     <!-- Import helper to load UI Kit components -->
     <script type="module">
-      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@dytesdk/ui-kit@latest/loader/index.es2017.js';
+      import { defineCustomElements } from 'https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit-ui@latest/loader/index.es2017.js';
       defineCustomElements();
     </script>
 
-    <!-- Import Web Core 2.x via CDN -->
-    <script src="https://cdn.dyte.in/core/dyte2.js"></script>
+    <!-- Import RealtimeKit Core via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit@latest/dist/browser.js"></script>
 
     <!-- Video Background Transformer -->
-    <script src="https://cdn.jsdelivr.net/npm/@dytesdk/video-background-transformer@latest/dist/index.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@cloudflare/realtimekit-virtual-background@latest/dist/index.iife.js"></script>
   </head>
   <body>
-    <dyte-meeting id="my-meeting" show-setup-screen="true" />
+    <rtk-meeting id="my-meeting" show-setup-screen="true" />
 
     <script>
       const searchParams = new URL(window.location.href).searchParams;
@@ -39,16 +34,16 @@
 
       // Initialize a meeting
 
-      DyteClient.init({
+      RealtimeKitClient.init({
         authToken,
       }).then(async (meeting) => {
         document.getElementById('my-meeting').meeting = meeting;
 
         /**
-         * To customise DyteVideoBackgroundTransformer configs, please refer to https://www.npmjs.com/package/@dytesdk/video-background-transformer?activeTab=readme.
+         * To customise RealtimeKitVideoBackgroundTransformer configs, please refer to https://www.npmjs.com/package/@cloudflare/realtimekit-virtual-background?activeTab=readme.
         */
         const videoBackgroundTransformer =
-          await DyteVideoBackgroundTransformer.init({
+          await RealtimeKitVideoBackgroundTransformer.init({
             meeting,
             segmentationConfig: {
               pipeline: 'canvas2dCpu', // 'webgl2' | 'canvas2dCpu'
