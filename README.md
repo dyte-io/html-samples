@@ -1,8 +1,6 @@
-# Dyte UI Kit - HTML Samples
+# RealtimeKit - HTML Samples
 
-This repository consists of all the different ways in which you can use Dyte's
-UI Kit and other packages to its full extent to get the best live audio/video
-experience.
+This repository consists of all the different ways in which you can use RealtimeKit and other packages to its full extent to get the best live audio/video experience.
 
 ## Samples
 
@@ -11,6 +9,7 @@ Here are the list of available samples at the moment.
 1. [Default Meeting UI](./samples/default-meeting-ui/)
 2. [Using Background Transformer to modify your background](./samples/with-background-transformer/)
 3. [Background Transformer UI sample](./samples/background-transformer-ui/)
+4. [Create Your Own UI](./samples/create-your-own-ui/)
 
 ## Usage
 

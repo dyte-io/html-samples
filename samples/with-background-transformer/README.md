@@ -1,6 +1,6 @@
 # Simple Background Transformer sample
 
-This sample showcases how you can modify your background while in a Dyte video
+This sample showcases how you can modify your background while in a RealtimeKit video
 call with the
 [`@cloudflare/realtimekit-virtual-background`](https://www.npmjs.com/package/@cloudflare/realtimekit-virtual-background)
 package.

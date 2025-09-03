@@ -2,6 +2,7 @@
   "name": "html-samples",
   "scripts": {
     "format": "prettier -w samples",
+    "build": "npm run postbuild",
     "postbuild": "./postbuild.sh",
     "deploy": "wrangler pages deploy ./dist"
   },
