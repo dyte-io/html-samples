@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        name: Deploy
+        steps:
+            - uses: actions/checkout@v4
+
+            - run: |
+                # npm install - Not needed
+                npm run build
+
+            - name: Deploy to Production
+              uses: cloudflare/wrangler-action@v3
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  wranglerVersion: "4.19.1"
+                  command: pages deploy ./dist

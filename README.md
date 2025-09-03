@@ -1,8 +1,6 @@
-# Dyte UI Kit - HTML Samples
+# RealtimeKit - HTML Samples
 
-This repository consists of all the different ways in which you can use Dyte's
-UI Kit and other packages to its full extent to get the best live audio/video
-experience.
+This repository consists of all the different ways in which you can use RealtimeKit and other packages to its full extent to get the best live audio/video experience.
 
 ## Samples
 
