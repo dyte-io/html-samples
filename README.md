@@ -1,5 +1,7 @@
 # RealtimeKit - HTML Samples
 
+> The contents of this repository have been moved to [cloudflare/realtimekit-web-examples](https://github.com/cloudflare/realtimekit-web-examples). Future updates and maintenance will continue there.
+
 This repository consists of all the different ways in which you can use RealtimeKit and other packages to its full extent to get the best live audio/video experience.
 
 ## Samples
